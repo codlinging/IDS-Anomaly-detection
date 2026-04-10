@@ -1,0 +1,30 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+wipro/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Machine Learning Models
+*.joblib
+*.pkl
+*.h5
+*.model
+
+# Datasets
+*.csv
+*.dat
+*.out
+*.log
+
+# VS Code / IDEs
+.vscode/
+.idea/
+*.swp
