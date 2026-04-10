@@ -27,3 +27,37 @@ Traditional Intrusion Detection Systems (IDS) rely on strict signature-based rul
 ├── train_custom_model.py   # Pipeline to train a new AI model from scratch
 ├── .gitignore              # Git ignore rules
 └── README.md               # Project documentation
+
+git clone [https://github.com/yourusername/ai-ids-dashboard.git](https://github.com/yourusername/ai-ids-dashboard.git)
+cd ai-ids-dashboard
+
+python -m venv wipro
+# On Windows:
+wipro\Scripts\activate
+# On Mac/Linux:
+source wipro/bin/activate
+
+pip install pandas numpy scikit-learn streamlit joblib huggingface_hub
+
+How to Run the Application
+Step 1: Train the Initial Model
+Before starting the dashboard, you need a local model file (local_ids_model.joblib).
+
+Download a network dataset like NSL-KDD from Kaggle.
+
+Save it in the project folder as my_custom_network_data.csv.
+
+Open train_custom_model.py and ensure TARGET_LABEL_COLUMN matches your CSV's attack column.
+
+Run the training script:
+
+Bash
+python train_custom_model.py
+Note: If you do not have a dataset yet, you can modify train_custom_model.py to use sklearn.datasets.make_classification to generate a dummy model just to test the UI.
+
+Step 2: Launch the Dashboard
+Once local_ids_model.joblib exists in your folder, launch the UI:
+
+Bash
+python -m streamlit run app.py
+Navigate to http://localhost:8501 in your browser to view the interactive dashboard.
